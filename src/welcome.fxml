@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WelcomeController">
+   <children>
+      <Button fx:id="exe_btn" layoutX="527.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#onExeBtn" prefHeight="39.0" prefWidth="180.0" text="Execute!" />
+      <ScrollPane layoutX="34.0" layoutY="68.0" prefHeight="404.0" prefWidth="397.0">
+         <content>
+            <TextArea fx:id="text_area" prefHeight="379.0" prefWidth="391.0" promptText="write your assembly code..." />
+         </content>
+      </ScrollPane>
+      <Button fx:id="choose_file_btn" layoutX="527.0" layoutY="433.0" mnemonicParsing="false" onMouseClicked="#onChooseBtn" prefHeight="39.0" prefWidth="180.0" text="Choose file" />
+      <Button fx:id="submit_btn" layoutX="143.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#onSubmitBtn" prefHeight="39.0" prefWidth="180.0" text="Submit" />
+      <Label alignment="CENTER" layoutX="301.0" layoutY="14.0" prefHeight="39.0" prefWidth="205.0" text="CPU Simulator">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="527.0" layoutY="68.0" prefHeight="123.0" prefWidth="180.0" text="Write assembly code in text area or choose .as or .asm file" wrapText="true" />
+   </children>
+</AnchorPane>
