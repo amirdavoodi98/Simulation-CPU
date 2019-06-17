@@ -77,7 +77,7 @@ public class MainController {
 
             for (pc = 0; pc < Assembler.limit; pc++) {
 
-                instructionCode = Assembler.getBinaryCode(pc);
+                instructionCode = Utilities.getBinaryWithDigits(Integer.parseInt(Assembler.getMachineCode(pc)),32);
                 System.out.println(instructionCode);
                 ControlUnit.setSignals();
                 Registers.readRegisters();
