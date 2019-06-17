@@ -9,6 +9,11 @@ public class Registers {
 
         }
     }
+     public static void setTimesOfUsing(int register_id) {        // TODO: calculate how many times one register has been used
+
+        MainController.times_used_register[register_id] +=1; 
+    }
+
 
     public static void readRegisters() {
 
@@ -17,12 +22,16 @@ public class Registers {
 
         MainController.readReg1 =  MainController.registers[(int)Utilities.getDecimal(readReg1Adress)];
         MainController.readReg2 =  MainController.registers[(int)Utilities.getDecimal(readReg2Adress)];
+            setTimesOfUsing((int)Utilities.getDecimal(readReg1Adress));
+            setTimesOfUsing((int)Utilities.getDecimal(readReg2Adress));
 
     }
 
     public static void writeBack(){
         int address = getWrtiteAdress();
         if(MainController.RegWrite){
+            setTimesOfUsing(address);
+            
             if(MainController.MemtoReg) {
                 MainController.registers[address] = MainController.readMemory;
             }else {
