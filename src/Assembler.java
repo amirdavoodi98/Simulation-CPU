@@ -1,3 +1,5 @@
+package com.company;
+
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,7 +17,6 @@ public class Assembler {
     private static HashMap<String, String> oppCodes = new HashMap<>();
     private static ArrayList<String> directives = new ArrayList<>();
     private static ArrayList<String> used = new ArrayList<>();
-    public static int memory[] = new int[16000];
     private static ArrayList<String> formatR = new ArrayList<>();
     private static ArrayList<String> formatI = new ArrayList<>();
     private static ArrayList<String> formatJ = new ArrayList<>();
@@ -57,7 +58,7 @@ public class Assembler {
             int i = 0;
             while (pc < length) {
                 String s = getMachineCode(pc);
-                memory[i++] = Integer.parseInt(s);
+                MainController.memory[i++] = Integer.parseInt(s); /*   gcgcxf*/
                 s += "\n";
                 writer.append(s);
                 pc++;
@@ -168,9 +169,9 @@ public class Assembler {
         //generate oppcode for kinds of formats
         if (formatR.contains(splitedList.get(0))) {
             binary = "0000" + oppCodes.get(splitedList.get(0)) +
-                    getBinaryWithDigits(Integer.parseInt(splitedList.get(2)), 4) +
-                    getBinaryWithDigits(Integer.parseInt(splitedList.get(3)), 4) +
-                    getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
+                    Utilities.getBinaryWithDigits(Integer.parseInt(splitedList.get(2)), 4) +
+                    Utilities. getBinaryWithDigits(Integer.parseInt(splitedList.get(3)), 4) +
+                    Utilities. getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
                     "000000000000";
 
         } else if (formatI.contains(splitedList.get(0))) {
@@ -181,7 +182,7 @@ public class Assembler {
             String offset;
             int offsetindex = 3;
 
-            if (isNumeric(splitedList.get(offsetindex))) {// check offset is label or a number
+            if (Utilities.isNumeric(splitedList.get(offsetindex))) {// check offset is label or a number
                 if (splitedList.get(0).equals("beq")) {
                     offset = String.valueOf(Integer.valueOf(splitedList.get(offsetindex)) - pc - 1);
                 } else {
@@ -200,20 +201,20 @@ public class Assembler {
                 offset = "00000000000000000000";
             }
             binary = "0000" + oppCodes.get(splitedList.get(0)) +
-                    getBinaryWithDigits(Integer.parseInt(splitedList.get(2)), 4) +
-                    getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
-                    getBinaryWithDigits(Integer.parseInt(offset), 16);
+                    Utilities.getBinaryWithDigits(Integer.parseInt(splitedList.get(2)), 4) +
+                    Utilities. getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
+                    Utilities.getBinaryWithDigits(Integer.parseInt(offset), 16);
         } else if (formatJ.contains(splitedList.get(0))) {
             // halt instruction end program and machine code is always constant
             if (splitedList.get(0).equals("halt")) {
                 binary = "1110000000000000000000000000";
             } else {
                 binary = "0000" + oppCodes.get(splitedList.get(0)) + "00000000" +
-                        getBinaryWithDigits(Integer.parseInt(labels.get(splitedList.get(1)).toString()), 16);
+                        Utilities.getBinaryWithDigits(Integer.parseInt(labels.get(splitedList.get(1)).toString()), 16);
             }
         } else {
             // print directives
-            if (isNumeric(splitedList.get(splitedList.size() - 1))) {// check offset is label or a number
+            if (Utilities.isNumeric(splitedList.get(splitedList.size() - 1))) {// check offset is label or a number
                 answer = splitedList.get(splitedList.size() - 1);
             } else {
                 answer = labels.get(splitedList.get(splitedList.size() - 1)).toString();
@@ -229,7 +230,7 @@ public class Assembler {
         String binary = getBinaryCode(pc);
         String answer = "";
         binary = binary.replaceFirst("^0+(?!$)", ""); //remove zero from fist of binary
-        answer = String.valueOf(getDecimal(binary));
+        answer = String.valueOf(Utilities.getDecimal(binary));
         System.out.println(answer);
 
         return answer;
@@ -249,45 +250,5 @@ public class Assembler {
         }
         return splitedArray;
     }
-
-
-    private static String getBinaryWithDigits(int no, int digit) {
-        StringBuilder result = new StringBuilder();
-        int container[] = new int[digit];
-        for (int i = 0; i < digit; i++) {
-            container[i] = 0;
-        }
-        int i = 0;
-        while (no > 0) {
-            container[i] = no % 2;
-            i++;
-            no = no / 2;
-        }
-        for (int j = digit - 1; j >= 0; j--) {
-            result.append(String.valueOf(container[j]));
-        }
-        return String.valueOf(result);
-    }
-
-    private static boolean isNumeric(String strNum) {
-        try {
-            Double.parseDouble(strNum);
-        } catch (NumberFormatException | NullPointerException nfe) {
-            return false;
-        }
-        return true;
-    }
-
-    private static long getDecimal(String binaryNumber) {
-        String reverse = new StringBuffer(binaryNumber).reverse().toString();
-        long decimal = 0;
-        for (int i = 0; i < reverse.length(); i++) {
-            char c = reverse.charAt(i);
-            int k = c - '0';
-            decimal = decimal + k * (long) Math.pow(2, i);
-        }
-        return decimal;
-    }
-
 
 }
