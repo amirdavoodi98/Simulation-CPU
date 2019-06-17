@@ -4,10 +4,15 @@ import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.effect.Effect;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.concurrent.CountDownLatch;
@@ -29,6 +34,8 @@ public class MainController implements Initializable {
     static int times_used_register[] = new int[32];
     static int mem_cells_used = 0;
     static Stage myStage;
+    static int instruction_counter = 0;
+    File files[] = new File[]{new File("src\\StopBtn.png"),new File("src\\PlayBtn.png")};
     public ImageView pc_image;
     public Label register1;
     public Label register2;
@@ -61,6 +68,10 @@ public class MainController implements Initializable {
     public ImageView adder_mux;
     public ImageView last_mux;
     public ImageView adder_sll2;
+    public ImageView start_btn;
+    public Label register_used;
+    public Label memory_used;
+    public Label instructions;
 
     public void execute() {
         setupRegisters();//setup registers
@@ -75,11 +86,11 @@ public class MainController implements Initializable {
             pc += (int) Utilities.getDecimal(instructionCode.substring(16, 32));
         }
         if (Jump) {
-            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32))-1;
+            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32));
         }
 
         if (Jalr) {
-            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32))-1;
+            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32));
         }
     }
 
@@ -109,15 +120,23 @@ public class MainController implements Initializable {
         register14.setText(String.valueOf(registers[14]));
         register15.setText(String.valueOf(registers[15]));
         // TODO: set each imageView whether is enable or disable
-
-    }
-
-    public void onRegister15(MouseEvent mouseEvent) {
-        execute();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+    static HashSet<Integer> total_registers_used = new HashSet<>();
+    private int started = 1;
+    public void onStart(MouseEvent mouseEvent) {
+        if (started == 1) {
+            Image image = new Image(getClass().getResourceAsStream("StopBtn.png"));
+            start_btn.setImage(image);
+            started = 0;
+            execute();
+
+        }else{
+            flag = 1;
+        }
     }
 
 
@@ -126,6 +145,7 @@ public class MainController implements Initializable {
         public void run() {
             for (pc = 0; pc < Assembler.limit; pc++) {
                 if (flag == 0) {
+                    instruction_counter++;
                     instructionCode = Utilities.getBinaryWithDigits(Integer.parseInt(Assembler.getMachineCode(pc)), 32);
                     System.out.println(instructionCode);
                     ControlUnit.setSignals();
@@ -141,12 +161,22 @@ public class MainController implements Initializable {
                         }
                     });
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
             }
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    instructions.setText("instructions: " + instruction_counter);
+                    float mem_used = mem_cells_used / 65536
+                            , registers_used = total_registers_used.size() / 32;
+                    memory_used.setText("Memory percent used: " + mem_used);
+                    register_used.setText("Registers percent used: " + registers_used);
+                }
+            });
         }
     }
 }

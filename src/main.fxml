@@ -47,7 +47,7 @@
       <Label fx:id="register14" layoutX="830.0" layoutY="463.0" prefHeight="27.0" prefWidth="86.0" />
       <Label layoutX="730.0" layoutY="463.0" prefHeight="27.0" prefWidth="93.0" text="Register14:" />
       <Label layoutX="730.0" layoutY="490.0" prefHeight="27.0" prefWidth="93.0" text="Register15:" />
-      <Label fx:id="register15" layoutX="830.0" layoutY="490.0" onMouseClicked="#onRegister15" prefHeight="27.0" prefWidth="86.0" />
+      <Label fx:id="register15" layoutX="830.0" layoutY="490.0" prefHeight="27.0" prefWidth="86.0" />
       <ImageView fx:id="i_mem" fitHeight="135.0" fitWidth="80.0" layoutX="100.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@element.png" />
@@ -193,5 +193,25 @@
       <Line endX="-35.0" layoutX="417.0" layoutY="348.0" rotate="90.0" startX="-100.0" />
       <Line endX="-70.0" layoutX="791.0" layoutY="305.0" startX="-100.0" />
       <Line endX="40.0" layoutX="258.0" layoutY="208.0" rotate="-37.9" startX="-100.0" />
+      <ImageView fx:id="start_btn" fitHeight="87.0" fitWidth="131.0" layoutX="401.0" layoutY="490.0" onMouseClicked="#onStart" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@PlayBtn.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="register_used" layoutX="516.0" layoutY="476.0" prefHeight="34.0" prefWidth="171.0" text="Registers percent used:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="memory_used" layoutX="516.0" layoutY="509.0" prefHeight="34.0" prefWidth="171.0" text="Memory percent used:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="instructions" layoutX="516.0" layoutY="543.0" prefHeight="34.0" prefWidth="171.0" text="Instructions:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
