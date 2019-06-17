@@ -1,11 +1,19 @@
-//package com.company;
 
 public class Registers {
 
+    public static void setupRegisters(){
+
+        for(int i = 0;i<MainController.registers.length;i++){
+
+            MainController.registers[i] = 0;
+
+        }
+    }
+
     public static void readRegisters() {
 
-        String   readReg1Adress = MainController.instructionCode.substring(9,14);
-        String   readReg2Adress = MainController.instructionCode.substring(15,20);
+        String   readReg1Adress = MainController.instructionCode.substring(8,12);
+        String   readReg2Adress = MainController.instructionCode.substring(12,16);
 
         MainController.readReg1 =  MainController.registers[(int)Utilities.getDecimal(readReg1Adress)];
         MainController.readReg2 =  MainController.registers[(int)Utilities.getDecimal(readReg2Adress)];
@@ -34,16 +42,16 @@ public class Registers {
         int  writeRegAdress = 0;
 
         if (MainController.RegDst) {
-            writeRegAdress = (int) Utilities.getDecimal(MainController.instructionCode.substring(20,25));
+            writeRegAdress = (int) Utilities.getDecimal(MainController.instructionCode.substring(16,20));
         }else{
-            writeRegAdress = (int) Utilities.getDecimal(MainController.instructionCode.substring(15,20));
+            writeRegAdress = (int) Utilities.getDecimal(MainController.instructionCode.substring(12,16));
         }
 
         if (MainController.Jalr) {
             writeRegAdress = 31;
         }
         if(MainController.Lui){
-            writeRegAdress = (int) Utilities.getDecimal(MainController.instructionCode.substring(14,19));
+            writeRegAdress = (int) Utilities.getDecimal(MainController.instructionCode.substring(12,16));
 
         }
 
