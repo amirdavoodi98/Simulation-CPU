@@ -34,7 +34,7 @@ public class MainController {
     private static void checkJump(){
 
         if(ALUResult == 0 && Branch){
-            pc += (int) Utilities.getDecimal(instructionCode.substring(16,32))+1;
+            pc += (int) Utilities.getDecimal(instructionCode.substring(16,32));
         }
         if(Jump){
             pc = (int) Utilities.getDecimal(instructionCode.substring(16,32));
