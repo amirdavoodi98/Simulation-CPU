@@ -18,7 +18,7 @@ public class MainController implements Initializable {
             MemWrite = false, MemtoReg = false, Branch = false, Jump = false, Jalr = false, Lui = false;
     static int pc = 0;
     static int memory[] = new int[65536];
-
+    static int flag = 0; //halt
     static String instructionCode = "";
     static String AlUOp = "";
     static int readMemory = 0;
@@ -155,24 +155,26 @@ public class MainController implements Initializable {
         @Override
         public void run() {
             for (pc = 0; pc < Assembler.limit; pc++) {
-                instructionCode = Utilities.getBinaryWithDigits(Integer.parseInt(Assembler.getMachineCode(pc)), 32);
-                System.out.println(instructionCode);
-                ControlUnit.setSignals();
-                Registers.readRegisters();
-                ALU.ALUExecution();
-                checkJump();
-                Memory.memoryManager();
-                Registers.writeBack();
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        changeImageViews();
+                if (flag == 0) {
+                    instructionCode = Utilities.getBinaryWithDigits(Integer.parseInt(Assembler.getMachineCode(pc)), 32);
+                    System.out.println(instructionCode);
+                    ControlUnit.setSignals();
+                    Registers.readRegisters();
+                    ALU.ALUExecution();
+                    checkJump();
+                    Memory.memoryManager();
+                    Registers.writeBack();
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            changeImageViews();
+                        }
+                    });
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                });
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
             }
         }
