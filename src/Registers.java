@@ -48,7 +48,7 @@ public class Registers {
         }
 
         if (MainController.Jalr) {
-            writeRegAdress = 31;
+            writeRegAdress = 15;
         }
         if(MainController.Lui){
             writeRegAdress = (int) Utilities.getDecimal(MainController.instructionCode.substring(12,16));
