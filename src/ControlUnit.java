@@ -92,7 +92,7 @@ public class ControlUnit {
 
             case "1110": //halt
                 System.out.println("Halt");
-                System.exit(0);
+//                System.exit(0);
                 break;
 
         }

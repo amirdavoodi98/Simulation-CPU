@@ -30,7 +30,8 @@ public class WelcomeController {
         stage.setScene(new Scene(p));
         stage.show();
         MainController.myStage = stage;
-        MainController.execute();
+//        MainController mainController = new MainController();
+//        mainController.execute();
     }
 
     private File getFile() {

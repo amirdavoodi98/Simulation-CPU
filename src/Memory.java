@@ -1,9 +1,9 @@
 //package com.company;
 
 public class Memory {
-    
- private static int getMemUsed() { // TODO: Iterate over memory to find out how many cells of that have been used?
-      MainController.mem_cells_used++;
+
+    private static int getMemUsed() { // TODO: Iterate over memory to find out how many cells of that have been used?
+        MainController.mem_cells_used++;
         return 0;
     }
     public static void memoryManager(){

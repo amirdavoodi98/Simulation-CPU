@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
-
+   <children>
+      <ImageView fx:id="pc_image" fitHeight="164.0" fitWidth="64.0" layoutX="27.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pc_disable.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="570.0" layoutY="83.0" prefHeight="27.0" prefWidth="86.0" text="Register0:" />
+      <Label layoutX="670.0" layoutY="83.0" prefHeight="27.0" prefWidth="86.0" text="0" />
+      <Label fx:id="register1" layoutX="670.0" layoutY="110.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="110.0" prefHeight="27.0" prefWidth="86.0" text="Register1:" />
+      <Label fx:id="register2" layoutX="670.0" layoutY="137.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="137.0" prefHeight="27.0" prefWidth="86.0" text="Register2:" />
+      <Label fx:id="register3" layoutX="670.0" layoutY="164.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="164.0" prefHeight="27.0" prefWidth="86.0" text="Register3:" />
+      <Label fx:id="register4" layoutX="670.0" layoutY="191.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="191.0" prefHeight="27.0" prefWidth="86.0" text="Register4:" />
+      <Label fx:id="register5" layoutX="670.0" layoutY="218.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="218.0" prefHeight="27.0" prefWidth="86.0" text="Register5:" />
+      <Label fx:id="register6" layoutX="670.0" layoutY="245.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="245.0" prefHeight="27.0" prefWidth="86.0" text="Register6:" />
+      <Label fx:id="register7" layoutX="670.0" layoutY="272.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="272.0" prefHeight="27.0" prefWidth="86.0" text="Register7:" />
+      <Label fx:id="register8" layoutX="670.0" layoutY="299.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="299.0" prefHeight="27.0" prefWidth="86.0" text="Register8:" />
+      <Label fx:id="register9" layoutX="670.0" layoutY="326.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="326.0" prefHeight="27.0" prefWidth="86.0" text="Register9:" />
+      <Label fx:id="register10" layoutX="670.0" layoutY="355.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="355.0" prefHeight="27.0" prefWidth="93.0" text="Register10:" />
+      <Label fx:id="register11" layoutX="670.0" layoutY="382.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="382.0" prefHeight="27.0" prefWidth="93.0" text="Register11:" />
+      <Label fx:id="register12" layoutX="670.0" layoutY="409.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="409.0" prefHeight="27.0" prefWidth="93.0" text="Register12:" />
+      <Label fx:id="register13" layoutX="670.0" layoutY="436.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="436.0" prefHeight="27.0" prefWidth="93.0" text="Register13:" />
+      <Label fx:id="register14" layoutX="670.0" layoutY="463.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="570.0" layoutY="463.0" prefHeight="27.0" prefWidth="93.0" text="Register14:" />
+      <Label layoutX="570.0" layoutY="490.0" prefHeight="27.0" prefWidth="93.0" text="Register15:" />
+      <Label fx:id="register15" layoutX="670.0" layoutY="490.0" onMouseClicked="#onRegister15" prefHeight="27.0" prefWidth="86.0" />
+   </children>
 </AnchorPane>
