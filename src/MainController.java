@@ -45,51 +45,22 @@ public class MainController implements Initializable {
     public Label register13;
     public Label register14;
     public Label register15;
-    Service<Void> service = new Service<Void>() {
-        @Override
-        protected Task<Void> createTask() {
-            return new Task<Void>() {
-                @Override
-                protected Void call() throws Exception {
-                    //Background work
-                    final CountDownLatch latch = new CountDownLatch(1);
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                for (pc = 0; pc < Assembler.limit; pc++) {
-                                    instructionCode = Utilities.getBinaryWithDigits(Integer.parseInt(Assembler.getMachineCode(pc)), 32);
-                                    System.out.println("pc:" + pc + ", " + instructionCode);
-                                    ControlUnit.setSignals();
-                                    Registers.readRegisters();
-                                    ALU.ALUExecution();
-                                    checkJump();
-                                    Memory.memoryManager();
-                                    Registers.writeBack();
-                                    changeImageViews();
-                                    Random random = new Random(10);
-                                    String string = String.valueOf(random.nextInt(100));
-                                    register1.setText(string);
-                                    System.out.println("random : " + string);
-                                    try {
-                                        Thread.sleep(1000);
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                                System.out.println("O_o");
-                            } finally {
-                                latch.countDown();
-                            }
-                        }
-                    });
-                    latch.await();
-                    //Keep with the background work
-                    return null;
-                }
-            };
-        }
-    };
+    public ImageView i_mem;
+    public Label pc_output;
+    public ImageView registerfile;
+    public ImageView alu;
+    public ImageView dmem;
+    public ImageView wb_mux;
+    public ImageView add_with_4_adder;
+    public ImageView alu_mux;
+    public ImageView sign_extention;
+    public ImageView control;
+    public ImageView rf_mux;
+    public ImageView j_sll2;
+    public ImageView add_with_j_adder;
+    public ImageView adder_mux;
+    public ImageView last_mux;
+    public ImageView adder_sll2;
 
     public void execute() {
         setupRegisters();//setup registers
@@ -97,7 +68,6 @@ public class MainController implements Initializable {
         Thread threadHelper = new Thread(new ThreadHelper());
         threadHelper.start();
     }
-
 
     private static void checkJump() {
 
@@ -122,7 +92,6 @@ public class MainController implements Initializable {
         }
     }
 
-
     private void changeImageViews() {
         register1.setText(String.valueOf(registers[1]));
         register2.setText(String.valueOf(registers[2]));
@@ -140,6 +109,7 @@ public class MainController implements Initializable {
         register14.setText(String.valueOf(registers[14]));
         register15.setText(String.valueOf(registers[15]));
         // TODO: set each imageView whether is enable or disable
+
     }
 
     public void onRegister15(MouseEvent mouseEvent) {

@@ -93,6 +93,7 @@ public class ControlUnit {
             case "1110": //halt
                 System.out.println("Halt");
 //                System.exit(0);
+                MainController.flag = 1;
                 break;
 
         }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
@@ -8,44 +9,189 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+<AnchorPane prefHeight="604.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
    <children>
-      <ImageView fx:id="pc_image" fitHeight="164.0" fitWidth="64.0" layoutX="27.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pc_image" fitHeight="164.0" fitWidth="64.0" layoutX="26.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pc_disable.png" />
          </image>
       </ImageView>
-      <Label layoutX="570.0" layoutY="83.0" prefHeight="27.0" prefWidth="86.0" text="Register0:" />
-      <Label layoutX="670.0" layoutY="83.0" prefHeight="27.0" prefWidth="86.0" text="0" />
-      <Label fx:id="register1" layoutX="670.0" layoutY="110.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="110.0" prefHeight="27.0" prefWidth="86.0" text="Register1:" />
-      <Label fx:id="register2" layoutX="670.0" layoutY="137.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="137.0" prefHeight="27.0" prefWidth="86.0" text="Register2:" />
-      <Label fx:id="register3" layoutX="670.0" layoutY="164.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="164.0" prefHeight="27.0" prefWidth="86.0" text="Register3:" />
-      <Label fx:id="register4" layoutX="670.0" layoutY="191.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="191.0" prefHeight="27.0" prefWidth="86.0" text="Register4:" />
-      <Label fx:id="register5" layoutX="670.0" layoutY="218.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="218.0" prefHeight="27.0" prefWidth="86.0" text="Register5:" />
-      <Label fx:id="register6" layoutX="670.0" layoutY="245.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="245.0" prefHeight="27.0" prefWidth="86.0" text="Register6:" />
-      <Label fx:id="register7" layoutX="670.0" layoutY="272.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="272.0" prefHeight="27.0" prefWidth="86.0" text="Register7:" />
-      <Label fx:id="register8" layoutX="670.0" layoutY="299.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="299.0" prefHeight="27.0" prefWidth="86.0" text="Register8:" />
-      <Label fx:id="register9" layoutX="670.0" layoutY="326.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="326.0" prefHeight="27.0" prefWidth="86.0" text="Register9:" />
-      <Label fx:id="register10" layoutX="670.0" layoutY="355.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="355.0" prefHeight="27.0" prefWidth="93.0" text="Register10:" />
-      <Label fx:id="register11" layoutX="670.0" layoutY="382.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="382.0" prefHeight="27.0" prefWidth="93.0" text="Register11:" />
-      <Label fx:id="register12" layoutX="670.0" layoutY="409.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="409.0" prefHeight="27.0" prefWidth="93.0" text="Register12:" />
-      <Label fx:id="register13" layoutX="670.0" layoutY="436.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="436.0" prefHeight="27.0" prefWidth="93.0" text="Register13:" />
-      <Label fx:id="register14" layoutX="670.0" layoutY="463.0" prefHeight="27.0" prefWidth="86.0" />
-      <Label layoutX="570.0" layoutY="463.0" prefHeight="27.0" prefWidth="93.0" text="Register14:" />
-      <Label layoutX="570.0" layoutY="490.0" prefHeight="27.0" prefWidth="93.0" text="Register15:" />
-      <Label fx:id="register15" layoutX="670.0" layoutY="490.0" onMouseClicked="#onRegister15" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="83.0" prefHeight="27.0" prefWidth="86.0" text="Register0:" />
+      <Label layoutX="830.0" layoutY="83.0" prefHeight="27.0" prefWidth="86.0" text="0" />
+      <Label fx:id="register1" layoutX="830.0" layoutY="110.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="110.0" prefHeight="27.0" prefWidth="86.0" text="Register1:" />
+      <Label fx:id="register2" layoutX="830.0" layoutY="137.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="137.0" prefHeight="27.0" prefWidth="86.0" text="Register2:" />
+      <Label fx:id="register3" layoutX="830.0" layoutY="164.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="164.0" prefHeight="27.0" prefWidth="86.0" text="Register3:" />
+      <Label fx:id="register4" layoutX="830.0" layoutY="191.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="191.0" prefHeight="27.0" prefWidth="86.0" text="Register4:" />
+      <Label fx:id="register5" layoutX="830.0" layoutY="218.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="218.0" prefHeight="27.0" prefWidth="86.0" text="Register5:" />
+      <Label fx:id="register6" layoutX="830.0" layoutY="245.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="245.0" prefHeight="27.0" prefWidth="86.0" text="Register6:" />
+      <Label fx:id="register7" layoutX="830.0" layoutY="272.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="272.0" prefHeight="27.0" prefWidth="86.0" text="Register7:" />
+      <Label fx:id="register8" layoutX="830.0" layoutY="299.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="299.0" prefHeight="27.0" prefWidth="86.0" text="Register8:" />
+      <Label fx:id="register9" layoutX="830.0" layoutY="326.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="326.0" prefHeight="27.0" prefWidth="86.0" text="Register9:" />
+      <Label fx:id="register10" layoutX="830.0" layoutY="355.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="355.0" prefHeight="27.0" prefWidth="93.0" text="Register10:" />
+      <Label fx:id="register11" layoutX="830.0" layoutY="382.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="382.0" prefHeight="27.0" prefWidth="93.0" text="Register11:" />
+      <Label fx:id="register12" layoutX="830.0" layoutY="409.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="409.0" prefHeight="27.0" prefWidth="93.0" text="Register12:" />
+      <Label fx:id="register13" layoutX="830.0" layoutY="436.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="436.0" prefHeight="27.0" prefWidth="93.0" text="Register13:" />
+      <Label fx:id="register14" layoutX="830.0" layoutY="463.0" prefHeight="27.0" prefWidth="86.0" />
+      <Label layoutX="730.0" layoutY="463.0" prefHeight="27.0" prefWidth="93.0" text="Register14:" />
+      <Label layoutX="730.0" layoutY="490.0" prefHeight="27.0" prefWidth="93.0" text="Register15:" />
+      <Label fx:id="register15" layoutX="830.0" layoutY="490.0" onMouseClicked="#onRegister15" prefHeight="27.0" prefWidth="86.0" />
+      <ImageView fx:id="i_mem" fitHeight="135.0" fitWidth="80.0" layoutX="100.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="115.0" layoutY="285.0" text="I Mem" />
+      <Label fx:id="pc_output" layoutX="87.0" layoutY="369.0" />
+      <ImageView fx:id="registerfile" fitHeight="125.0" fitWidth="80.0" layoutX="263.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="293.0" layoutY="287.0" text="RF" />
+      <ImageView fx:id="alu" fitHeight="125.0" fitWidth="80.0" layoutX="407.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="430.0" layoutY="289.0" text="ALU" />
+      <ImageView fx:id="dmem" fitHeight="168.0" fitWidth="93.0" layoutX="517.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="540.0" layoutY="287.0" text="D Mem" />
+      <ImageView fx:id="wb_mux" fitHeight="88.0" fitWidth="59.0" layoutX="640.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@mux.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="add_with_4_adder" fitHeight="65.0" fitWidth="45.0" layoutX="58.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="60.0" layoutY="98.0" text="Adder">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="alu_mux" fitHeight="65.0" fitWidth="38.0" layoutX="351.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mux.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sign_extention" fitHeight="100.0" fitWidth="62.0" layoutX="257.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="263.0" layoutY="489.0" text="Sign Ext">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="control" fitHeight="87.0" fitWidth="64.0" layoutX="285.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="291.0" layoutY="175.0" text="Control">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="rf_mux" fitHeight="65.0" fitWidth="38.0" layoutX="213.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mux.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="j_sll2" fitHeight="87.0" fitWidth="64.0" layoutX="415.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sll.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="426.0" layoutY="164.0" text="SLL 2" />
+      <ImageView fx:id="add_with_j_adder" fitHeight="65.0" fitWidth="45.0" layoutX="549.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@element.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="551.0" layoutY="157.0" text="Adder">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="adder_mux" fitHeight="65.0" fitWidth="38.0" layoutX="610.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mux.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="last_mux" fitHeight="65.0" fitWidth="38.0" layoutX="640.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@mux.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="adder_sll2" fitHeight="87.0" fitWidth="64.0" layoutX="187.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sll.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="198.0" layoutY="75.0" text="SLL 2" />
+      <Line endX="12.0" layoutX="89.0" layoutY="298.0" startX="-1.0" />
+      <Line endX="12.0" layoutX="14.0" layoutY="299.0" startX="-1.0" />
+      <Line endX="95.0" layoutX="41.0" layoutY="177.0" rotate="90.0" startX="-150.0" />
+      <Line endX="-55.0" layoutX="111.0" layoutY="108.0" startX="-80.0" />
+      <Line endX="-53.0" layoutX="111.0" layoutY="82.0" startX="-90.0" />
+      <Label layoutX="35.0" layoutY="62.0" text="4" />
+      <Line endX="500.0" layoutX="114.0" layoutY="54.0" startX="-100.0" />
+      <Line endX="-25.0" layoutX="710.0" layoutY="30.0" startX="-100.0" />
+      <Line endX="-75.0" layoutX="698.0" layoutY="43.0" rotate="90.0" startX="-100.0" />
+      <Line endX="-50.0" layoutX="761.0" layoutY="53.0" rotate="90.0" startX="-100.0" />
+      <Line endX="-85.0" layoutX="773.0" layoutY="76.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="549.0" layoutY="62.0" startX="-320.0" />
+      <Line endX="105.0" layoutX="540.0" layoutY="83.0" startX="90.0" />
+      <Line endX="-50.0" layoutX="739.0" layoutY="137.0" startX="-100.0" />
+      <Line endX="30.0" layoutX="669.0" layoutY="108.0" rotate="40.6" startX="-50.0" />
+      <Line endX="-70.0" layoutX="686.0" layoutY="151.0" startX="-100.0" />
+      <Line endX="60.0" layoutX="171.0" layoutY="167.0" rotate="127.6" startX="-150.0" />
+      <Line endX="415.0" layoutX="203.0" layoutY="124.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="448.0" layoutY="137.0" rotate="12.5" startX="10.0" />
+      <Line endX="100.0" layoutX="447.0" layoutY="185.0" startX="24.0" />
+      <Line endX="105.0" layoutX="313.0" layoutY="178.0" startX="70.0" />
+      <Line endX="-30.0" layoutX="416.0" layoutY="476.0" startX="-100.0" />
+      <Line endX="200.0" layoutX="336.0" layoutY="326.0" rotate="90.0" startX="-100.0" />
+      <Line endX="-10.0" layoutX="275.0" layoutY="259.0" startX="-100.0" />
+      <Line endX="-10.0" layoutX="276.0" layoutY="285.0" startX="-100.0" />
+      <Line endX="-50.0" layoutX="273.0" layoutY="301.0" rotate="41.2" startX="-100.0" />
+      <Line endX="-55.0" layoutX="277.0" layoutY="340.0" startX="-100.0" />
+      <Line endX="-75.0" layoutX="341.0" layoutY="328.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="223.0" layoutY="433.0" rotate="67.6" startX="-100.0" />
+      <Line endX="-30.0" layoutX="439.0" layoutY="261.0" startX="-100.0" />
+      <Line endX="-65.0" layoutX="585.0" layoutY="302.0" startX="-100.0" />
+      <Line endX="90.0" layoutX="430.0" layoutY="382.0" startX="-80.0" />
+      <Line endX="-60.0" layoutX="711.0" layoutY="284.0" startX="-105.0" />
+      <Line endX="100.0" layoutX="551.0" layoutY="326.0" startX="70.0" />
+      <Line endX="50.0" layoutX="578.0" layoutY="430.0" startX="-80.0" />
+      <Line endX="30.0" layoutX="535.0" layoutY="365.0" rotate="90.0" startX="-100.0" />
+      <Line endX="10.0" layoutX="666.0" layoutY="381.0" rotate="90.0" startX="-100.0" />
+      <Line endX="-80.0" layoutX="439.0" layoutY="312.0" startX="-100.0" />
+      <Line endX="40.0" layoutX="371.0" layoutY="409.0" rotate="107.7" startX="-100.0" />
+      <Line endX="-74.0" layoutX="484.0" layoutY="328.0" startX="-100.0" />
+      <Line endX="-35.0" layoutX="417.0" layoutY="348.0" rotate="90.0" startX="-100.0" />
+      <Line endX="-70.0" layoutX="791.0" layoutY="305.0" startX="-100.0" />
+      <Line endX="40.0" layoutX="258.0" layoutY="208.0" rotate="-37.9" startX="-100.0" />
    </children>
 </AnchorPane>
