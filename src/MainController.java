@@ -86,11 +86,11 @@ public class MainController implements Initializable {
             pc += (int) Utilities.getDecimal(instructionCode.substring(16, 32));
         }
         if (Jump) {
-            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32));
+            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32))-1;
         }
 
         if (Jalr) {
-            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32));
+            pc = (int) Utilities.getDecimal(instructionCode.substring(16, 32))-1;
         }
     }
 
