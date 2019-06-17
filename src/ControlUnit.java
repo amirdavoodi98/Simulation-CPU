@@ -59,13 +59,14 @@ public class ControlUnit {
                 setSignalsfalse();
                 MainController.MemtoReg = true;
                 MainController.ALUSrc = true;
-                MainController.MemWrite  = true;
+                MainController.RegWrite = true;
+                MainController.MemRead  = true;
                 MainController.AlUOp = "000";
                 break;
 
             case "1010": //sw
                 setSignalsfalse();
-                MainController.MemRead = true;
+                MainController.MemWrite = true;
                 MainController.ALUSrc = true;
                 MainController.AlUOp = "000";
                 break;
@@ -84,7 +85,6 @@ public class ControlUnit {
 
             case "1100": //jalr
                 setSignalsfalse();
-                MainController.Jump = true;
                 MainController.Jalr = true;
                 MainController.RegWrite = true;
                 MainController.AlUOp = "xxx";
@@ -92,8 +92,8 @@ public class ControlUnit {
 
             case "1110": //halt
                 System.out.println("Halt");
-//                System.exit(0);
                 MainController.flag = 1;
+//                System.exit(0);
                 break;
 
         }
