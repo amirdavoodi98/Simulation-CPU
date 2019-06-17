@@ -15,15 +15,15 @@ public class MainController {
     public static int readReg2 = 0 ;
     public static int ALUResult = 0 ;
 
-    public static int registers[] = new int[32];
+    public static int registers[] = new int[16];
 
-    private static int times_used_register[] = new int[32];
-    private static int mem_cells_used = 0;
+    public static int times_used_register[] = new int[16];
+    public static int mem_cells_used = 0;
     static Stage myStage;
 
     static void execute() {
 
-        setupRegisters();//setup registers
+        Registers.setupRegisters();//setup registers
 
         Assembler.main();
         ThreadHelper threadHelper = new ThreadHelper();
@@ -53,19 +53,6 @@ public class MainController {
     private static void setTimesOfUsing(int register_id) {        // TODO: calculate how many times one register has been used
 
     }
-
-
-
-    private static void setupRegisters(){
-
-        for(int i = 0;i<registers.length;i++){
-
-            registers[i] = 0;
-
-        }
-    }
-
-
 
     private static void changeImageViews() {
         // TODO: set each imageView whether is enable or disable
