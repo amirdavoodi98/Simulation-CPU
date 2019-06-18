@@ -149,7 +149,7 @@ public class MainController implements Initializable {
         j_sll2.setOpacity(0.1);
         add_with_j_adder.setOpacity(0.1);
         adder_mux.setOpacity(0.1);
-        last_mux.setOpacity(0.1);
+        //last_mux.setOpacity(0.1);
         adder_sll2.setOpacity(0.1);
 
     }
@@ -160,7 +160,7 @@ public class MainController implements Initializable {
         j_sll2.setOpacity(0.1);
         add_with_j_adder.setOpacity(0.1);
         adder_mux.setOpacity(0.1);
-        last_mux.setOpacity(0.1);
+       // last_mux.setOpacity(0.1);
         adder_sll2.setOpacity(0.1);
 
 
@@ -243,12 +243,7 @@ public class MainController implements Initializable {
                 setFullOpcity();
                 dmem.setOpacity(0.1);
                 wb_mux.setOpacity(0.1);
-                rf_mux.setOpacity(1);
-                j_sll2.setOpacity(1);
-                add_with_j_adder.setOpacity(1);
-                adder_mux.setOpacity(1);
-                last_mux.setOpacity(1);
-                adder_sll2.setOpacity(1);
+                adder_sll2.setOpacity(0.1);
 
                 break;
 
@@ -258,12 +253,9 @@ public class MainController implements Initializable {
                 alu_mux.setOpacity(0.1);
                 dmem.setOpacity(0.1);
                 wb_mux.setOpacity(0.1);
-                rf_mux.setOpacity(1);
-                j_sll2.setOpacity(1);
-                add_with_j_adder.setOpacity(1);
-                adder_mux.setOpacity(1);
-                last_mux.setOpacity(1);
-                adder_sll2.setOpacity(1);
+                sign_extention.setOpacity(0.1);
+                j_sll2.setOpacity(0.1);
+                add_with_j_adder.setOpacity(0.1);
                 break;
 
             case "1100": //jalr
@@ -272,12 +264,10 @@ public class MainController implements Initializable {
                 alu_mux.setOpacity(0.1);
                 dmem.setOpacity(0.1);
                 wb_mux.setOpacity(0.1);
-                rf_mux.setOpacity(1);
-                j_sll2.setOpacity(1);
-                add_with_j_adder.setOpacity(1);
-                adder_mux.setOpacity(1);
-                last_mux.setOpacity(1);
-                adder_sll2.setOpacity(1);
+                sign_extention.setOpacity(0.1);
+                j_sll2.setOpacity(0.1);
+                add_with_j_adder.setOpacity(0.1);
+
                 break;
 
             case "1110": //halt
@@ -327,7 +317,7 @@ public class MainController implements Initializable {
                         }
                     });
                     try {
-                        Thread.sleep(100000);
+                        Thread.sleep(1500);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
