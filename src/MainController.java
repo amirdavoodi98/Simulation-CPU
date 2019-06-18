@@ -127,20 +127,20 @@ public class MainController implements Initializable {
     }
 
     private void setFullOpcity(){
-          registerfile.setOpacity(1);
-          alu.setOpacity(1);
-          dmem.setOpacity(1);
-          wb_mux.setOpacity(1);
-          add_with_4_adder.setOpacity(1);
-          alu_mux.setOpacity(1);
-          sign_extention.setOpacity(1);
-          control.setOpacity(1);
-          rf_mux.setOpacity(1);
-          j_sll2.setOpacity(1);
-          add_with_j_adder.setOpacity(1);
-          adder_mux.setOpacity(1);
-          last_mux.setOpacity(1);
-          adder_sll2.setOpacity(1);
+        registerfile.setOpacity(1);
+        alu.setOpacity(1);
+        dmem.setOpacity(1);
+        wb_mux.setOpacity(1);
+        add_with_4_adder.setOpacity(1);
+        alu_mux.setOpacity(1);
+        sign_extention.setOpacity(1);
+        control.setOpacity(1);
+        rf_mux.setOpacity(1);
+        j_sll2.setOpacity(1);
+        add_with_j_adder.setOpacity(1);
+        adder_mux.setOpacity(1);
+        last_mux.setOpacity(1);
+        adder_sll2.setOpacity(1);
     }
     private void setROpcity(){
 
@@ -160,7 +160,7 @@ public class MainController implements Initializable {
         j_sll2.setOpacity(0.1);
         add_with_j_adder.setOpacity(0.1);
         adder_mux.setOpacity(0.1);
-       // last_mux.setOpacity(0.1);
+        // last_mux.setOpacity(0.1);
         adder_sll2.setOpacity(0.1);
 
 
@@ -317,7 +317,7 @@ public class MainController implements Initializable {
                         }
                     });
                     try {
-                        Thread.sleep(1500);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -327,10 +327,12 @@ public class MainController implements Initializable {
                 @Override
                 public void run() {
                     instructions.setText("instructions: " + instruction_counter);
-                    float mem_used = mem_cells_used / 65536
-                            , registers_used = total_registers_used.size() / 32;
-                    memory_used.setText("Memory percent used: " + mem_used);
-                    register_used.setText("Registers percent used: " + registers_used);
+                    double mem_used = 100 * (double)mem_cells_used / 65536
+                            , registers_used = 100 * (float)total_registers_used.size() / 16;
+                    memory_used.setText("Memory percent used: " + Math.floor(mem_used));
+                    register_used.setText("Registers percent used: " + Math.floor(registers_used));
+                    System.out.println((mem_used));
+                    System.out.println(total_registers_used.size());
                 }
             });
         }
