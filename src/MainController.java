@@ -54,6 +54,7 @@ public class MainController implements Initializable {
     public Label register15;
     public ImageView i_mem;
     public Label pc_output;
+
     public ImageView registerfile;
     public ImageView alu;
     public ImageView dmem;
@@ -68,6 +69,7 @@ public class MainController implements Initializable {
     public ImageView adder_mux;
     public ImageView last_mux;
     public ImageView adder_sll2;
+
     public ImageView start_btn;
     public Label register_used;
     public Label memory_used;
@@ -119,7 +121,171 @@ public class MainController implements Initializable {
         register13.setText(String.valueOf(registers[13]));
         register14.setText(String.valueOf(registers[14]));
         register15.setText(String.valueOf(registers[15]));
+        setOpcity();
+
         // TODO: set each imageView whether is enable or disable
+    }
+
+    private void setFullOpcity(){
+          registerfile.setOpacity(1);
+          alu.setOpacity(1);
+          dmem.setOpacity(1);
+          wb_mux.setOpacity(1);
+          add_with_4_adder.setOpacity(1);
+          alu_mux.setOpacity(1);
+          sign_extention.setOpacity(1);
+          control.setOpacity(1);
+          rf_mux.setOpacity(1);
+          j_sll2.setOpacity(1);
+          add_with_j_adder.setOpacity(1);
+          adder_mux.setOpacity(1);
+          last_mux.setOpacity(1);
+          adder_sll2.setOpacity(1);
+    }
+    private void setROpcity(){
+
+        dmem.setOpacity(0.1);
+        sign_extention.setOpacity(0.1);
+        j_sll2.setOpacity(0.1);
+        add_with_j_adder.setOpacity(0.1);
+        adder_mux.setOpacity(0.1);
+        last_mux.setOpacity(0.1);
+        adder_sll2.setOpacity(0.1);
+
+    }
+
+    private void setIOpcity(){
+
+        dmem.setOpacity(0.1);
+        j_sll2.setOpacity(0.1);
+        add_with_j_adder.setOpacity(0.1);
+        adder_mux.setOpacity(0.1);
+        last_mux.setOpacity(0.1);
+        adder_sll2.setOpacity(0.1);
+
+
+    }
+
+    private void setOpcity() {
+
+        String opcode = MainController.instructionCode.substring(4, 8);
+
+        switch (opcode) {
+
+            case "0000": //add R
+                setFullOpcity();
+                setROpcity();
+                break;
+
+            case "0001": //sub
+                setFullOpcity();
+                setROpcity();
+                break;
+
+            case "0010": //slt
+                setFullOpcity();
+                setROpcity();
+
+                break;
+
+            case "0100": //nand
+                setFullOpcity();
+                setROpcity();
+
+                break;
+
+            case "0011": //or
+                setFullOpcity();
+                setROpcity();
+
+                break;
+
+            case "0101": //addi
+                setFullOpcity();
+                setIOpcity();
+                break;
+
+            case "0110": //slti
+                setFullOpcity();
+                setIOpcity();
+
+                break;
+
+            case "0111": //ori
+                setFullOpcity();
+                setIOpcity();
+
+                break;
+
+            case "1000": //lui
+                setFullOpcity();
+                setIOpcity();
+
+                break;
+
+            case "1001": //lw
+                setFullOpcity();
+                setIOpcity();
+                dmem.setOpacity(1);
+
+                break;
+
+            case "1010": //sw
+                setFullOpcity();
+                setIOpcity();
+                dmem.setOpacity(1);
+                wb_mux.setOpacity(0.1);
+
+                break;
+
+            case "1011": //beq
+
+                setFullOpcity();
+                dmem.setOpacity(0.1);
+                wb_mux.setOpacity(0.1);
+                rf_mux.setOpacity(1);
+                j_sll2.setOpacity(1);
+                add_with_j_adder.setOpacity(1);
+                adder_mux.setOpacity(1);
+                last_mux.setOpacity(1);
+                adder_sll2.setOpacity(1);
+
+                break;
+
+            case "1101": //j
+                setFullOpcity();
+                alu.setOpacity(0.1);
+                alu_mux.setOpacity(0.1);
+                dmem.setOpacity(0.1);
+                wb_mux.setOpacity(0.1);
+                rf_mux.setOpacity(1);
+                j_sll2.setOpacity(1);
+                add_with_j_adder.setOpacity(1);
+                adder_mux.setOpacity(1);
+                last_mux.setOpacity(1);
+                adder_sll2.setOpacity(1);
+                break;
+
+            case "1100": //jalr
+                setFullOpcity();
+                alu.setOpacity(0.1);
+                alu_mux.setOpacity(0.1);
+                dmem.setOpacity(0.1);
+                wb_mux.setOpacity(0.1);
+                rf_mux.setOpacity(1);
+                j_sll2.setOpacity(1);
+                add_with_j_adder.setOpacity(1);
+                adder_mux.setOpacity(1);
+                last_mux.setOpacity(1);
+                adder_sll2.setOpacity(1);
+                break;
+
+            case "1110": //halt
+                setFullOpcity();
+
+                break;
+
+        }
     }
 
     @Override
@@ -161,7 +327,7 @@ public class MainController implements Initializable {
                         }
                     });
                     try {
-                        Thread.sleep(1500);
+                        Thread.sleep(100000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
