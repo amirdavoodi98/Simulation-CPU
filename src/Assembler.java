@@ -69,6 +69,7 @@ public class Assembler {
 
         } catch (Exception e) {
             System.out.println("Error!");
+            e.printStackTrace();
             System.exit(1);
         }
     }
@@ -169,8 +170,8 @@ public class Assembler {
         if (formatR.contains(splitedList.get(0))) {
             binary = "0000" + oppCodes.get(splitedList.get(0)) +
                     Utilities.getBinaryWithDigits(Integer.parseInt(splitedList.get(2)), 4) +
-                    Utilities. getBinaryWithDigits(Integer.parseInt(splitedList.get(3)), 4) +
-                    Utilities. getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
+                    Utilities.getBinaryWithDigits(Integer.parseInt(splitedList.get(3)), 4) +
+                    Utilities.getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
                     "000000000000";
 
         } else if (formatI.contains(splitedList.get(0))) {
@@ -201,7 +202,7 @@ public class Assembler {
             }
             binary = "0000" + oppCodes.get(splitedList.get(0)) +
                     Utilities.getBinaryWithDigits(Integer.parseInt(splitedList.get(2)), 4) +
-                    Utilities. getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
+                    Utilities.getBinaryWithDigits(Integer.parseInt(splitedList.get(1)), 4) +
                     Utilities.getBinaryWithDigits(Integer.parseInt(offset), 16);
         } else if (formatJ.contains(splitedList.get(0))) {
             // halt instruction end program and machine code is always constant
