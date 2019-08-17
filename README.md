@@ -4,7 +4,7 @@ A CPU simulation via Javafx, second Computer Architecture project, designed by: 
 ## Screenshots
 <img align="center" src="https://github.com/amirdavoodi98/Simulation-CPU/blob/master/ScreenShots/Capture.JPG?raw=true." alt="Spire the Hare" title="ScreenShot1" width="900px">
 
-<img align="center" src="https://github.com/amirdavoodi98/Simulation-CPU/blob/master/ScreenShots/Capture1.JPGraw=true." alt="Spire the Hare" title="ScreenShot" width="900px">
+<img align="center" src="https://github.com/amirdavoodi98/Simulation-CPU/blob/master/ScreenShots/Capture1.JPG?raw=true." alt="Spire the Hare" title="ScreenShot" width="900px">
 
 <img align="center" src="https://github.com/amirdavoodi98/Simulation-CPU/blob/master/ScreenShots/Capture3.JPG?raw=true." alt="Spire the Hare" title="ScreenShot3" width="900px">
 
