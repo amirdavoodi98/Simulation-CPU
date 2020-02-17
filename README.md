@@ -30,7 +30,7 @@ git clone https://github.com/amirdavoodi98/Simulation-CPU.git
 ## Authors
 
 * **Amir Muhammad Karimi** - [AMK9978](https://github.com/amk9978)
-* **Amir Mahdi Soleimani** - [mohdis](https://github.com/mohdis)
+* **fucking Amir Mahdi Soleimani** - [mohdis](https://github.com/mohdis)
 * **Amir Muhammad Davoodi** - [amirdavoodi98](https://github.com/amirdavoodi98)
 
 ## License
